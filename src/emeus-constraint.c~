@@ -413,7 +413,7 @@ emeus_constraint_new (gpointer                 target_object,
 }
 
 /**
- * emeus_constraint_new_constant_constraint: (constructor)
+ * emeus_constraint_new_constant: (constructor)
  * @target_object: (type Gtk.Widget) (nullable): the target widget,
  *   or %NULL for the parent layout
  * @target_attribute: the attribute to set on the target widget
@@ -434,11 +434,11 @@ emeus_constraint_new (gpointer                 target_object,
  * Since: 1.0
  */
 EmeusConstraint *
-emeus_constraint_new_constant_constraint (gpointer                 target_object,
-                                          EmeusConstraintAttribute target_attribute,
-                                          EmeusConstraintRelation  relation,
-                                          double                   constant,
-                                          int                      strength)
+emeus_constraint_new_constant (gpointer                 target_object,
+                               EmeusConstraintAttribute target_attribute,
+                               EmeusConstraintRelation  relation,
+                               double                   constant,
+                               int                      strength)
 {
   g_return_val_if_fail (target_object == NULL || GTK_IS_WIDGET (target_object), NULL);
 

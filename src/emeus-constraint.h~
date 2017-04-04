@@ -47,7 +47,7 @@ EmeusConstraint *               emeus_constraint_new                    (gpointe
                                                                          double                   constant,
                                                                          int                      strength);
 EMEUS_AVAILABLE_IN_1_0
-EmeusConstraint *               emeus_constraint_new_constant_constraint(gpointer                 target_object,
+EmeusConstraint *               emeus_constraint_new_constant           (gpointer                 target_object,
                                                                          EmeusConstraintAttribute target_attribute,
                                                                          EmeusConstraintRelation  relation,
                                                                          double                   constant,

@@ -4,6 +4,9 @@ option('enable-gtk-doc', type: 'boolean',
 option('enable-introspection', type: 'boolean',
        value: true,
        description: 'Enable GObject Introspection (depends on GObject)')
+option('enable-vala', type: 'boolean',
+       value: true,
+       description: 'Enable Vala .vapi Generation (depends on Vala)')
 option('enable-debug', type: 'combo',
        choices: [ 'auto', 'yes', 'minimum', 'no' ],
        value: 'auto',

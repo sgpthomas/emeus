@@ -102,16 +102,26 @@ if get_option('enable-introspection')
     '-DEMEUS_COMPILATION',
   ]
 
-  gnome.generate_gir(libemeus,
-                     sources: public_headers + sources,
-                     namespace: 'Emeus',
-                     nsversion: emeus_api_version,
-                     identifier_prefix: 'Emeus',
-                     symbol_prefix: 'emeus',
-                     export_packages: 'emeus-@0@'.format(emeus_api_version),
-                     includes: [ 'Gtk-3.0' ],
+  gir_targets = gnome.generate_gir(libemeus,
+                                   sources: public_headers + sources,
+                                   namespace: 'Emeus',
+                                   nsversion: emeus_api_version,
+                                   identifier_prefix: 'Emeus',
+                                   symbol_prefix: 'emeus',
+                                   export_packages: 'emeus-@0@'.format(emeus_api_version),
+                                   includes: [ 'Gtk-3.0', 'GLib-2.0' ],
+                                   dependencies : [ glib_dep, gtk_dep ],
+                                   install: true,
+                                   extra_args: gir_extra_args)
+endif
+if get_option('enable-vala')
+  vapi_target = gnome.generate_vapi('emeus-@0@'.format(emeus_api_version), 
+                     sources: gir_targets[0],
+                     gir_dirs: meson.current_build_dir(),
+                     metadata_dirs: meson.current_source_dir(),
                      install: true,
-                     extra_args: gir_extra_args)
+                     packages: [ 'gtk+-3.0' , 'glib-2.0' ],
+                     dependencies: [ glib_dep, gtk_dep ])
 endif
 
 subdir('tests')

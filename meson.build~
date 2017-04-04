@@ -1,5 +1,5 @@
 project('emeus', 'c',
-        version: '1.0.0',
+        version: '0.99.1',
         default_options: [
           'buildtype=debug',
           'c_std=c99',
