@@ -149,7 +149,7 @@ mathlib_dep = cc.find_library('m', required: false)
 glib_dep = dependency('glib-2.0', version: '>= 2.46')
 
 gtk_version_req_major = 3
-gtk_version_req_minor = 20
+gtk_version_req_minor = 18
 gtk_version_req_micro = 0
 gtk_version_required = '@0@.@1@.@2@'.format(gtk_version_req_major, gtk_version_req_minor, gtk_version_req_micro)
 gtk_version_is_development = gtk_version_req_minor.is_odd()

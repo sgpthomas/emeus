@@ -1256,7 +1256,7 @@ emeus_constraint_layout_class_init (EmeusConstraintLayoutClass *klass)
   container_class->child_type = emeus_constraint_layout_child_type;
   gtk_container_class_handle_border_width (container_class);
 
-  // gtk_widget_class_set_css_name (widget_class, "constraintlayout");
+  gtk_widget_class_set_css_name (widget_class, "constraintlayout");
 }
 
 static void
@@ -2084,7 +2084,7 @@ emeus_constraint_layout_child_class_init (EmeusConstraintLayoutChildClass *klass
   g_object_class_install_properties (gobject_class, CHILD_N_PROPS,
                                      emeus_constraint_layout_child_properties);
 
-  // gtk_widget_class_set_css_name (widget_class, "constraintlayoutchild");
+  gtk_widget_class_set_css_name (widget_class, "constraintlayoutchild");
 }
 
 static void
@@ -2483,7 +2483,7 @@ emeus_constraint_layout_child_set_intrinsic_height (EmeusConstraintLayoutChild *
  *
  * Retrieves the name of the @child.
  *
- * Returns: (transfer none): the name of the child
+ * Returns: (nullable) (transfer none): the name of the child
  *
  * Since: 1.0
  */
